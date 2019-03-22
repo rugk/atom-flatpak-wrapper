@@ -18,7 +18,6 @@ SHELLCHECK_WRAPPER="flatpak-shellcheck.sh"
 
 ln -s "$relativeScriptsDir/$SHELLCHECK_WRAPPER" .
 
-# /usr is mounted to /var/run/host/usr, see https://github.com/flathub/io.atom.Atom/issues/12#issuecomment-474555053
 echo "Enter this path for shellcheck config: $LOCATION_DIR/$SHELLCHECK_WRAPPER"
 
 # install gpg2 wrapper
