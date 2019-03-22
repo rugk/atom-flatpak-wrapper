@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Wrapper for git signature to 
+# Wrapper for shellcheck to let one use shellcheck inside of an Atom flatpak.
 #
 
 # --sandbox and --no-network do not work
