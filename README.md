@@ -22,6 +22,11 @@ The main aim of these scripts is to provide a good developer experience (we don'
 
 * [`flatpak-gpg2.sh`](flatpak-gpg2.sh) – wrapping around gpg(2) letting you **sign git commits** inside of Atom (as you would do on the host)
 * [`flatpak-shellcheck.sh`](flatpak-shellcheck.sh) – wrapping around **shellcheck** letting you use [shellcheck inside of Atom](https://atom.io/packages/linter-shellcheck)
+
+## Tips
+
+* Note that if the flatpak has `host` permissions for the filesystem access, you do not need any workarounds, and you can just use the path `/var/run/host/usr/local/bin/example` to e.g. run `/usr/local/bin/example` inside of the flatpak, so just enter/use that, whereever it is requested.
+  However, note that the program is obviously restricted by the permissions of the flatpak.
  
 ## Contributing
 
