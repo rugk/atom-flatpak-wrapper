@@ -8,7 +8,7 @@
 # $2 = "--relative" (default) Use the relative path for creating the symbolic links
 # $2 = "--absolute" (default) Use the absolute path for creating the symbolic links
 #
-
+set -x
 # installs the binaries into this location
 locationDir="$HOME/bin"
 test -d "$1"&&locationDir="$1"
@@ -20,7 +20,7 @@ scriptDir="$PWD"
 mkdir -p "$locationDir"
 cd "$locationDir"||exit 1
 
-if [ "$2" != "--absolute" ]; then
+if [ "$2" = "--absolute" ]; then
   # use absolute path for the symbolic links
   relativeScriptsDir="$scriptDir"
 else
