@@ -16,7 +16,22 @@ The main aim of these scripts is to provide a good developer experience (we don'
    ```sh
    # flatpak override io.atom.Atom --talk-name=org.freedesktop.Flatpak
    ```
-3. Run [`./setup-flatpak-atom.sh`](setup-flatpak-atom.sh) to setup the scripts in an accessible dir (by default `~/bin`) for Atom. You may need to manually copy the paths to the scripts into your scripts, but the script will tell you this, if needed.
+3. Run [`./setup-flatpak-atom.sh`](setup-flatpak-atom.sh) to setup the scripts in an accessible dir (by default `~/bin`) for Atom. You may need to manually copy the paths from the output into your config files, but the script will tell you this, if needed.
+
+After that, you should be done. 🙂
+
+### System-wide installation
+
+**Note:** Obviously, this required `host` filesystem access of the flatpak, `home` access is not enough.
+
+If do not want your paths to be in the home dir of the user, because you e.g. have a system-wide installation of your IDE (Atom, …) and you do not want to duplicate this repo, you can move it to a dir accessible by all users (if in doubt, maybe `/opt`) and run the script from there. Note you then also need to pass a custom path for the symbolic links to be created and you can use the second argument to force an absolute instead of relative path for the symbolic links. Here is an example:
+
+```sh
+./setup-flatpak-atom.sh /opt/flatpak-wrapper --absolute
+```
+
+**Note**: If you want to follow the proper file path conventions, you can also use `/usr/local/bin` for the symbolic links. Note, however, that inside of flatpaks, the directory is accessible as `/var/run/host/usr/local/bin`, so you may need to replace this path.
+Usually, this is no problem if you can keep the resulting wrapper to be only executed in the flatpak (e.g. the shellcheck one), but the git/gpg one needs to be set in your `.gitconfig`, which also executes the wrapper outside of the flatpak if you use the affected git commands there. This will then obviously fail, as the path `/var/run/host/usr/local/bin` is obviously _not_ accessible outside of your flatpak. This is also why the `flatpak-gpg.sh` includes a mechanism to detect whether it is running inside of a flatpak by default.
 
 ## Wrappers included
 
@@ -25,7 +40,7 @@ The main aim of these scripts is to provide a good developer experience (we don'
 
 ## Tips
 
-* Note that if the flatpak has `host` permissions for the filesystem access, you do not need any workarounds, and you can just use the path `/var/run/host/usr/local/bin/example` to e.g. run `/usr/local/bin/example` inside of the flatpak, so just enter/use that, whereever it is requested.
+* Note that if the flatpak has `host` permissions for the filesystem access, you do not need any workarounds, and you can just use the path `/var/run/host/usr/local/bin/example` to e.g. run `/usr/local/bin/example` inside of the flatpak, so just enter/use that, wherever it is requested.
   However, note that the program is obviously restricted by the permissions of the flatpak.
  
 ## Contributing
