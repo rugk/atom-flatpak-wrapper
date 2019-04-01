@@ -3,10 +3,10 @@
 # Setup the binary wrappers.
 #
 # Parameter:
-# $1  location/dir, where binaries should be placed (will actually be symblinked
-#     to these ones here), default = ~/bin
-# $2 = "--relative" (default) Use the relative path for creating the symbolic links
-# $2 = "--absolute" (default) Use the absolute path for creating the symbolic links
+# $1 =  location/dir, where binaries should be placed (will actually be symblinked
+#       to these ones here), default = ~/bin
+# $2 =  "--relative" (default) Use the relative path for creating the symbolic links
+# $2 =  "--absolute" (default) Use the absolute path for creating the symbolic links
 #
 set -x
 # installs the binaries into this location
