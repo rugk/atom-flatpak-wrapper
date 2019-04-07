@@ -8,7 +8,7 @@
 # $2 =  "--relative" (default) Use the relative path for creating the symbolic links
 # $2 =  "--absolute" Use the absolute path for creating the symbolic links
 #
-set -x
+
 # installs the binaries into this location
 locationDir="$HOME/bin"
 test -d "$1"&&locationDir="$1"
