@@ -36,8 +36,8 @@ ln -s "$relativeScriptsDir/$SHELLCHECK_WRAPPER" .
 echo "Enter this path for shellcheck config: $locationDir/$SHELLCHECK_WRAPPER"
 
 # install gpg2 wrapper
-# HINT: Remove "-simple" to install the advanced wrapper.
-GPG_WRAPPER="flatpak-gpg-simple.sh"
+# HINT: Add "-simple" to install the experimental simple wrapper.
+GPG_WRAPPER="flatpak-gpg.sh"
 
 ln -s "$relativeScriptsDir/$GPG_WRAPPER" .
 

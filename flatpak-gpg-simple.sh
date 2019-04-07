@@ -6,6 +6,9 @@
 # This helps, if your (modern) gpg on the host is e.g. named gpg2, but "gpg"
 # inside of the flatpak.
 #
+# However, this may often fail to do some action such as signing, when there
+# is some deep integration into the window manager keyring e.g.
+#
 
 # finally spawn either gpg2 or gpg
 if command -v gpg2 >/dev/null; then

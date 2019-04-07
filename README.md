@@ -35,7 +35,8 @@ Usually, this is no problem if you can keep the resulting wrapper to be only exe
 
 ## Wrappers included
 
-* [`flatpak-gpg2.sh`](flatpak-gpg2.sh) – wrapping around gpg(2) letting you **sign git commits** inside of Atom (as you would do on the host)
+* [`flatpak-gpg2.sh`](flatpak-gpg2.sh) – wrapping around gpg(2) letting you **sign git commits** with Atom by spawning the command on the host
+* [`flatpak-gpg2-simple.sh`](flatpak-gpg2-simple.sh) – wrapping around gpg(2) that just selects the correct gpg/gpg2 binary. Can sign git commits inside of the flatpak.
 * [`flatpak-shellcheck.sh`](flatpak-shellcheck.sh) – wrapping around **shellcheck** letting you use [shellcheck inside of Atom](https://atom.io/packages/linter-shellcheck)
 
 ## Tips
