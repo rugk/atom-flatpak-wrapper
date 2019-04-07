@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Wrapper for git's signature via gpg to let one sign git comits inside of an
-# Atom flatpak. 
+# Atom flatpak. It spwans and executes gpg on the host system.
 #
 
 # first determinate whether we need to spawn anything to get outside of the flatpak
